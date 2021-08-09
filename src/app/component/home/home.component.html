@@ -1,3 +1,32 @@
 <app-header></app-header>
 <p>这里是home组件</p>
 
+<h2>引入图片</h2>
+<img alt="北条麻妃" src="./assets/image/E2ogwMXVgAMrhpR.jpg"/>
+<img [src]="picUrl"/>
+
+<h2>循环数组，显示索引值</h2>
+<li *ngFor="let item of list; let key = index;" [ngClass]="{'blue': key == 0, 'red': key == 1}">
+  {{key}}---{{item.title}}
+</li>
+
+<h2>[ngClass] [ngStyle]</h2>
+<div [ngClass]="{'blue': true, 'red': false}">[ngClass] </div>
+
+<h2>事件</h2>
+<button (click)="run()">执行方法获取数据</button>
+<p></p>
+<button (click)="setData()">执行方法修改数据{{title}}</button>
+
+<h2>表单事件 事件对象</h2>
+<input type="text" (keydown)="keydown($event)">
+
+<h2>双向数据绑定 ---- MVVM 只针对表单</h2>
+<input type="text" [(ngModel)]='keywords'/><br><br>
+{{keywords}}<br><br>
+<button (click)="changeKeywords()">修改keywords的值</button>
+
+
+
+
+
