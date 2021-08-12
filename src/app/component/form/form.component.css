@@ -1,0 +1,13 @@
+h2{
+  text-align: center;
+}
+.people_list{
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid aquamarine;
+}
+
+li{
+  height: 50px;
+}

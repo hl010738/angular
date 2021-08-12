@@ -1,0 +1,44 @@
+<p>form works!</p>
+
+<div class="people_list">
+  <ul>
+    <li>姓名: <input type="text" id="username" [(ngModel)]="peopleInfo.username"/></li>
+    <li>性别:
+      <input type="radio" name="sex" id="sex1" value="1" [(ngModel)]="peopleInfo.sex"/> <label for="sex1">男</label>
+      <input type="radio" name="sex" id="sex2" value="2" [(ngModel)]="peopleInfo.sex"/><label for="sex2">女</label>
+    </li>
+
+    <li>城市：
+        <select name="city" id="city" [(ngModel)]="peopleInfo.city">
+          <option [value]="item" *ngFor="let item of cities">{{item}}</option>
+        </select>
+    </li>
+
+    <li>爱好:
+      <span *ngFor="let item of peopleInfo.hobby; let key=index;">
+        <input type="checkbox" [id]="'check'+key" value="{{item.checked}}}" [(ngModel)]="item.checked"><label [for]="'check'+key">{{item.title}}</label>
+        &nbsp;&nbsp;
+      </span>
+    </li>
+
+    <li>备注：
+      <textarea name="mark" id="mark" cols="30" rows="10" [(ngModel)]="peopleInfo.mark"></textarea>
+
+
+    </li>
+
+  </ul>
+
+  <br><br><br>  <br><br><br>  <br><br><br>
+
+  <button (click)="doSubmit()">获取表单值</button>
+
+  <br><br><br>
+
+  <pre>
+    双向数据绑定
+    {{peopleInfo | json}}
+
+  </pre>
+
+</div>

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NewsComponent } from './component/news/news.component';
 import { HomeComponent } from './component/home/home.component';
 import { HeaderComponent } from './component/header/header.component';
+import { FormComponent } from './component/form/form.component';
 
 @NgModule({
   // 配置当前运行的项目的组件
@@ -16,7 +17,8 @@ import { HeaderComponent } from './component/header/header.component';
     AppComponent,
     NewsComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
