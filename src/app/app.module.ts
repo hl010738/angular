@@ -11,6 +11,7 @@ import { HomeComponent } from './component/home/home.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FormComponent } from './component/form/form.component';
 import { SearchComponent } from './component/search/search.component';
+import { TodolistComponent } from './component/todolist/todolist.component';
 
 @NgModule({
   // 配置当前运行的项目的组件
@@ -20,7 +21,8 @@ import { SearchComponent } from './component/search/search.component';
     HomeComponent,
     HeaderComponent,
     FormComponent,
-    SearchComponent
+    SearchComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,

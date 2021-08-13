@@ -1,0 +1,23 @@
+
+<h2>添加TODO-List</h2>
+
+<div class="todolist">
+  <input type="text" [(ngModel)]="keyword" (keyup)="doAdd($event);">
+  <hr>
+
+  <h3>代办事项</h3>
+  <ul>
+    <li *ngFor="let a of todoList; let key=index;" [hidden]="a.status==1">
+      <input type="checkbox" [(ngModel)]="a.status"/>{{a.title}} ----- <button (click)="doDeleteHistoryList(key)">X</button>
+    </li>
+  </ul>
+
+  <h3>已完成事项</h3>
+  <ul>
+    <li *ngFor="let a of todoList; let key=index;" [hidden]="a.status==0">
+      <input type="checkbox" [(ngModel)]="a.status"/>{{a.title}} ----- <button (click)="doDeleteHistoryList(key)">X</button>
+    </li>
+  </ul>
+</div>
+
+
