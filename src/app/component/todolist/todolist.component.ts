@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {StorageService} from "../../service/storage.service";
+
 @Component({
   selector: 'app-todolist',
   templateUrl: './todolist.component.html',
@@ -11,7 +13,7 @@ export class TodolistComponent implements OnInit {
 
   public todoList:any = [];
 
-  constructor() { }
+  constructor(public storageService:StorageService) { }
 
   ngOnInit(): void {
   }

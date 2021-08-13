@@ -13,6 +13,9 @@ import { FormComponent } from './component/form/form.component';
 import { SearchComponent } from './component/search/search.component';
 import { TodolistComponent } from './component/todolist/todolist.component';
 
+// 自定义服务
+import {StorageService} from "./service/storage.service";
+
 @NgModule({
   // 配置当前运行的项目的组件
   declarations: [
@@ -28,7 +31,8 @@ import { TodolistComponent } from './component/todolist/todolist.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  // 引入服务
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

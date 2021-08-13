@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {StorageService} from "../../service/storage.service";
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -11,9 +13,15 @@ export class SearchComponent implements OnInit {
 
   public historyList:any = [];
 
-  constructor() { }
+  constructor(public storageService:StorageService) { }
 
   ngOnInit(): void {
+    if (this.storageService.get("searchlist") == null){
+      this.historyList = [];
+    } else {
+      this.historyList = this.storageService.get("searchlist");
+    }
+
   }
 
   doDelete(key: any){
@@ -24,6 +32,7 @@ export class SearchComponent implements OnInit {
 
     if (this.historyList.indexOf(this.keyword) == -1){
       this.historyList.push(this.keyword);
+      this.storageService.set("searchlist", this.historyList);
     }
     this.keyword = "";
   }
