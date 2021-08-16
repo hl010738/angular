@@ -15,6 +15,7 @@ import { TodolistComponent } from './component/todolist/todolist.component';
 
 // 自定义服务
 import {StorageService} from "./service/storage.service";
+import { RxjsComponent } from './component/rxjs/rxjs.component';
 
 @NgModule({
   // 配置当前运行的项目的组件
@@ -25,7 +26,8 @@ import {StorageService} from "./service/storage.service";
     HeaderComponent,
     FormComponent,
     SearchComponent,
-    TodolistComponent
+    TodolistComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,
